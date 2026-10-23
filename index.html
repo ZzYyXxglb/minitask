@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniTask</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>MiniTask</h1>
+            <p>简单记录每一件待办事项</p>
+        </header>
+
+        <p id="task-count">0 项待完成</p>
+
+        <section aria-label="添加任务">
+            <input
+                type="text"
+                id="task-input"
+                placeholder="添加新任务..."
+                aria-label="新任务内容"
+            >
+            <button type="button" id="add-button">
+                添加
+            </button>
+        </section>
+
+        <section>
+            <h2>待办任务</h2>
+            <ul id="pending-list"></ul>
+            <p id="empty-message">暂无待办任务</p>
+        </section>
+
+        <section>
+            <h2>
+                <button
+                    type="button"
+                    id="completed-toggle"
+                    aria-expanded="false"
+                    aria-controls="completed-list"
+                >
+                    已完成 (0)
+                </button>
+            </h2>
+            <ul id="completed-list" hidden></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
