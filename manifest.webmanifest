@@ -1,0 +1,11 @@
+
+{
+  "name": "MiniTask",
+  "short_name": "MiniTask",
+  "description": "A simple personal task manager",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
