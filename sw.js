@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "minitask-v1";
+const CACHE_NAME = "minitask-v2";
 
 const APP_FILES = [
   "./",
@@ -42,6 +42,23 @@ self.addEventListener("fetch", (event) => {
       }
 
       return fetch(event.request);
+    })
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames
+          .filter((name) => {
+            return (
+              name.startsWith("minitask-") &&
+              name !== CACHE_NAME
+            );
+          })
+          .map((name) => caches.delete(name))
+      );
     })
   );
 });
